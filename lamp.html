@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+    <title>
+                LAMP |         Gander Site
+            </title>
+    	<meta name="generator" content="Bolt">
+    	<link rel="canonical" href="lamp.html">
+    </head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>LAMP</h2>
+        </div>
+
+        
+                                                                                                                                                                                                                        <div class="col-md-12">
+                    <article><h3><code>docker-compose.yml</code></h3>
+<pre><code class="language-yaml">version: "3"
+services:
+  mysql:
+    hostname: "mysql"
+    image: "mysql"
+    volumes:
+      - "./mysql:/var/lib/mysql"
+      - "$HOME/PhpstormProjects:/www"
+    working_dir: "/www"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=&lt;password&gt;"
+    ports:
+      - "3306:3306"
+    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
+  phpmyadmin:
+    image: "phpmyadmin/phpmyadmin"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=&lt;password&gt;"
+    ports:
+      - "8080:80"
+    links:
+      - "mysql:db"
+  pgsql:
+    hostname: "pgsql"
+    image: "postgres"
+    volumes:
+      - "./pgsql:/var/lib/postgresql/data"
+      - "$HOME/PhpstormProjects:/www"
+    working_dir: "/www"
+    environment:
+      - "POSTGRES_PASSWORD=&lt;password&gt;"
+    ports:
+      - "5432:5432"
+  pgadmin4:
+    image: "fenglc/pgadmin4"
+    ports:
+      - "5050:5050"
+    links:
+      - "pgsql"
+  dev56:
+    hostname: "dev56"
+    image: "gander/php-apache-dev:5.6"
+    volumes:
+      - "$HOME/PhpstormProjects:/www"
+      - "./dev.composer:/home/dev/.composer"
+      - "./dev.bash_aliases:/home/dev/.bash_aliases"
+    working_dir: "/www"
+    ports:
+      - "8056:80"
+    links:
+      - "mysql"
+      - "pgsql"
+  dev70:
+    hostname: "dev70"
+    image: "gander/php-apache-dev:7.0"
+    volumes:
+      - "$HOME/PhpstormProjects:/www"
+      - "./dev.composer:/home/dev/.composer"
+      - "./dev.bash_aliases:/home/dev/.bash_aliases"
+    working_dir: "/www"
+    ports:
+      - "8070:80"
+    links:
+      - "mysql"
+      - "pgsql"
+  dev71:
+    hostname: "dev71"
+    image: "gander/php-apache-dev:7.1"
+    volumes:
+      - "$HOME/PhpstormProjects:/www"
+      - "./dev.composer:/home/dev/.composer"
+      - "./dev.bash_aliases:/home/dev/.bash_aliases"
+    working_dir: "/www"
+    ports:
+      - "80:80"
+      - "8071:80"
+    links:
+      - "mysql"
+      - "pgsql"</code></pre></article>
+                </div>
+                                                                </div>
+
+    <div class="row">
+        <div class="col-md-12" style="margin-top:20px; margin-bottom: 20px;">
+                        <em>
+                    Tags:
+                </em>
+                    <a href="tags/apache.html">apache</a>,                     <a href="tags/configuration.html">configuration</a>,                     <a href="tags/database.html">database</a>,                     <a href="tags/debian.html">debian</a>,                     <a href="tags/dev.html">dev</a>,                     <a href="tags/docker.html">docker</a>,                     <a href="tags/docker-compose.html">docker-compose</a>,                     <a href="tags/mysql.html">mysql</a>,                     <a href="tags/php.html">php</a>,                     <a href="tags/ubuntu.html">ubuntu</a>,                     <a href="tags/utf8.html">utf8</a>,                     <a href="tags/vhost-alias.html">vhost_alias</a>                            </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+                                        <h3>Related content:</h3>
+                <ul>
+                                            <li><a href="my-bash-aliases.html">My .bash_aliases</a></li>
+                                            <li><a href="docker-tips.html">Docker tips</a></li>
+                                            <li><a href="docker-engine-and-docker-compose-on-ubuntu-16-04.html">Docker Engine and Docker Compose on Ubuntu 16.04</a></li>
+                                    </ul>
+                    </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+                                        <a class="float-left btn btn-primary" href="my-bash-aliases.html">&laquo; My .bash_aliases</a>
+                    </div>
+        <div class="col-md-6">
+                                        <a class="float-right btn btn-primary" href="javascript-fixtures.html">JavaScript fixtures &raquo;</a>
+                    </div>
+    </div>
+
+</div>
+
+
+<script async defer data-website-id="ba6e3a22-e496-4096-bd0a-23d48dfce33a" src="https://mws02-40122.wykr.es/umami.js"></script>
+
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+    
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments);
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-96302877-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+        var u = '//stats9.mydevil.net/';
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['setSiteId', '86']);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'piwik.js';
+        s.parentNode.insertBefore(g, s);
+    })();
+</script>
+<noscript><p><img src="http://stats9.mydevil.net/piwik.php?idsite=86" style="border:0;" alt=""/></p></noscript>
+<!-- End Piwik Code -->
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="http://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
