@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css" rel="stylesheet">
     <title>
-                Linux Mint 20 NVIDIA Driver |         Gander Site
-            </title>
-    	<meta name="generator" content="Bolt">
-    	<link rel="canonical" href="linux-mint-20-nvidia-driver.html">
-    </head>
+        Linux Mint 20 NVIDIA Driver | Gander Site
+    </title>
+    <meta content="Bolt" name="generator">
+    <link href="linux-mint-20-nvidia-driver.html" rel="canonical">
+</head>
 <body>
 
 <div class="container">
@@ -20,121 +20,120 @@
         </div>
 
 
-                                                                                                                                                                                                                        <div class="col-md-12">
-                    <article><h2>Config:</h2>
-<ul>
-<li>System:
-<ul>
-<li>Kernel: 5.4.0-52-generic x86_64</li>
-<li>Desktop: Cinnamon 4.6.7 </li>
-<li>Distro: Linux Mint 20 Ulyana</li>
-<li>Base: Ubuntu 20.04 focal </li>
-</ul>
-</li>
-<li>Graphics:
-<ul>
-<li>Device: NVIDIA GM204 [GeForce GTX 970] </li>
-<li>Driver: nvidia v: 450.80.02 </li>
-</ul>
-</li>
-</ul>
-<h2>Steps:</h2>
-<pre><code>sudo apt-get purge *nvidia*
+        <div class="col-md-12">
+            <article><h2>Config:</h2>
+                <ul>
+                    <li>System:
+                        <ul>
+                            <li>Kernel: 5.4.0-52-generic x86_64</li>
+                            <li>Desktop: Cinnamon 4.6.7</li>
+                            <li>Distro: Linux Mint 20 Ulyana</li>
+                            <li>Base: Ubuntu 20.04 focal</li>
+                        </ul>
+                    </li>
+                    <li>Graphics:
+                        <ul>
+                            <li>Device: NVIDIA GM204 [GeForce GTX 970]</li>
+                            <li>Driver: nvidia v: 450.80.02</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h2>Steps:</h2>
+                <pre><code>sudo apt-get purge *nvidia*
 sudo apt-get autoremove
 reboot</code></pre>
-<p>Download nvidia driver</p>
-<pre><code>echo 'blacklist nouveau' | sudo tee /etc/modprobe.d/disable-nouveau.conf
+                <p>Download nvidia driver</p>
+                <pre><code>echo 'blacklist nouveau' | sudo tee /etc/modprobe.d/disable-nouveau.conf
 sudo update-initramfs -u
 reboot</code></pre>
-<p><em>CTRL + ALT + F1</em></p>
-<pre><code>sudo service lightdm stop</code></pre>
-<p>Run nvidia installer</p>
-<table>
-<thead>
-<tr>
-<th>question</th>
-<th>answer</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>alternate method</td>
-<td>continue</td>
-</tr>
-<tr>
-<td>DKMS</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>32bit</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>?</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>nvidia-xconfig</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
-<pre><code>sudo service lightdm start</code></pre>
-<ul>
-<li>Run <em>NVIDIA X Server Settings</em> (<code>nvidia-settings</code>)</li>
-<li>Go to <em>X Server Display Configuration</em>
-</li>
-<li>Click <em>Save to X Configuration File</em>
-</li>
-</ul>
-<h2>Sources:</h2>
-<ul>
-<li>
-<p>» <a href="https://forums.linuxmint.com/viewtopic.php?t=154932&amp;start=39">Mint 20 Nvidia Driver Installation Update</a> «</p>
-</li>
-<li><a href="https://www.linuxmint.com/rel_ulyana_cinnamon.php">Release Notes for Linux Mint 20 Cinnamon</a></li>
-<li>
-<p><a href="https://www.nvidia.com/en-us/drivers/unix/">Unix Driver Archive</a></p>
-</li>
-<li><a href="https://forums.linuxmint.com/viewtopic.php?t=328023">ACPI errors and graphics card drivers issues</a></li>
-<li><a href="https://superuser.com/questions/1394120/nvidia-x-server-settings-is-displaying-empty-window">NVIDIA X server settings is displaying empty window</a></li>
-</ul></article>
-                </div>
-                                                                </div>
+                <p><em>CTRL + ALT + F1</em></p>
+                <pre><code>sudo service lightdm stop</code></pre>
+                <p>Run nvidia installer</p>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>question</th>
+                        <th>answer</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>alternate method</td>
+                        <td>continue</td>
+                    </tr>
+                    <tr>
+                        <td>DKMS</td>
+                        <td>yes</td>
+                    </tr>
+                    <tr>
+                        <td>32bit</td>
+                        <td>yes</td>
+                    </tr>
+                    <tr>
+                        <td>?</td>
+                        <td>yes</td>
+                    </tr>
+                    <tr>
+                        <td>nvidia-xconfig</td>
+                        <td>no</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <pre><code>sudo service lightdm start</code></pre>
+                <ul>
+                    <li>Run <em>NVIDIA X Server Settings</em> (<code>nvidia-settings</code>)</li>
+                    <li>Go to <em>X Server Display Configuration</em>
+                    </li>
+                    <li>Click <em>Save to X Configuration File</em>
+                    </li>
+                </ul>
+                <h2>Sources:</h2>
+                <ul>
+                    <li>
+                        <p>» <a href="https://forums.linuxmint.com/viewtopic.php?t=154932&amp;start=39">Mint 20 Nvidia Driver Installation Update</a> «</p>
+                    </li>
+                    <li><a href="https://www.linuxmint.com/rel_ulyana_cinnamon.php">Release Notes for Linux Mint 20 Cinnamon</a></li>
+                    <li>
+                        <p><a href="https://www.nvidia.com/en-us/drivers/unix/">Unix Driver Archive</a></p>
+                    </li>
+                    <li><a href="https://forums.linuxmint.com/viewtopic.php?t=328023">ACPI errors and graphics card drivers issues</a></li>
+                    <li><a href="https://superuser.com/questions/1394120/nvidia-x-server-settings-is-displaying-empty-window">NVIDIA X server settings is displaying empty window</a></li>
+                </ul>
+            </article>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-12" style="margin-top:20px; margin-bottom: 20px;">
-                        </div>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-                                </div>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
-                                        <a class="float-left btn btn-primary" href="awesome-node-scripts.html">&laquo; Awesome Node.js Scripts</a>
-                    </div>
+            <a class="float-left btn btn-primary" href="awesome-node-scripts.html">&laquo; Awesome Node.js Scripts</a>
+        </div>
         <div class="col-md-6">
-                                        <a class="float-right btn btn-primary" href="phpstorm-inotify-watches-limit.html">PhpStorm Inotify Watches Limit &raquo;</a>
-                    </div>
+            <a class="float-right btn btn-primary" href="phpstorm-inotify-watches-limit.html">PhpStorm Inotify Watches Limit &raquo;</a>
+        </div>
     </div>
 
 </div>
 
 
-<script async defer data-website-id="ba6e3a22-e496-4096-bd0a-23d48dfce33a" src="https://mws02-40122.wykr.es/umami.js"></script>
+<script async data-website-id="ba6e3a22-e496-4096-bd0a-23d48dfce33a" defer src="https://mws02-40122.wykr.es/umami.js"></script>
 
 
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script crossorigin="anonymous" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>

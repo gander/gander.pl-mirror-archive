@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css" rel="stylesheet">
     <title>
-                Vue.js tips and tricks |         Gander Site
-            </title>
-    	<meta name="generator" content="Bolt">
-    	<link rel="canonical" href="vue-js-tips-and-tricks.html">
-    </head>
+        Vue.js tips and tricks | Gander Site
+    </title>
+    <meta content="Bolt" name="generator">
+    <link href="vue-js-tips-and-tricks.html" rel="canonical">
+</head>
 <body>
 
 <div class="container">
@@ -20,47 +20,47 @@
         </div>
 
 
-                                                                                                                                                                                                                        <div class="col-md-12">
-                    <article><h3><strong>Vue CLI</strong></h3>
-<pre><code>npm install -g @vue/cli @vue/cli-service-global</code></pre>
-<pre><code>vue ui
+        <div class="col-md-12">
+            <article><h3><strong>Vue CLI</strong></h3>
+                <pre><code>npm install -g @vue/cli @vue/cli-service-global</code></pre>
+                <pre><code>vue ui
 vue create my-exaple-project</code></pre>
-<pre><code>vue add eslint
+                <pre><code>vue add eslint
 # eslint =&gt; @vue/eslint =&gt; @vue/cli-plugin-eslint
 vue add cli-plugin-eslint</code></pre>
-<pre><code># installs and invokes vue-cli-plugin-apollo
+                <pre><code># installs and invokes vue-cli-plugin-apollo
 vue add apollo</code></pre>
-<table>
-<thead>
-<tr>
-<th>Plugin</th>
-<th>Link</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>browser-extension</code></td>
-<td><a href="https://npm.im/vue-cli-plugin-browser-extension">https://npm.im/vue-cli-plugin-browser-extension</a></td>
-</tr>
-<tr>
-<td>Vue Composition API</td>
-<td><a href="https://npm.im/@vue/composition-api">https://npm.im/@vue/composition-api</a></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><a href="https://medium.com/javascript-in-plain-english/how-to-make-a-chrome-extension-with-vue-js-56e50bd97972">How to Make a Chrome Extension with Vue.js</a></li>
-</ul>
-<h3>
-<strong>Bootstrap</strong> table style not working?</h3>
-<p>Use <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code>.</p>
-<h3>
-<strong>v-model</strong> in Components (+ Composition API)</h3>
-<p><strong>In browser</strong></p>
-<pre><code class="language-js">Vue.use(vueCompositionApi.default);
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Plugin</th>
+                        <th>Link</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>browser-extension</code></td>
+                        <td><a href="https://npm.im/vue-cli-plugin-browser-extension">https://npm.im/vue-cli-plugin-browser-extension</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vue Composition API</td>
+                        <td><a href="https://npm.im/@vue/composition-api">https://npm.im/@vue/composition-api</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <ul>
+                    <li><a href="https://medium.com/javascript-in-plain-english/how-to-make-a-chrome-extension-with-vue-js-56e50bd97972">How to Make a Chrome Extension with Vue.js</a></li>
+                </ul>
+                <h3>
+                    <strong>Bootstrap</strong> table style not working?</h3>
+                <p>Use <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code>.</p>
+                <h3>
+                    <strong>v-model</strong> in Components (+ Composition API)</h3>
+                <p><strong>In browser</strong></p>
+                <pre><code class="language-js">Vue.use(vueCompositionApi.default);
 const {computed} = vueCompositionApi</code></pre>
-<h4>HTML:</h4>
-<pre><code class="language-html">&lt;div id="app"&gt;
+                <h4>HTML:</h4>
+                <pre><code class="language-html">&lt;div id="app"&gt;
   &lt;foo v-model="fooVal"&gt;&lt;/foo&gt;
     &lt;foo :value="fooVal" @input="fooVal = $event"&gt;&lt;/foo&gt;
 
@@ -70,9 +70,9 @@ const {computed} = vueCompositionApi</code></pre>
   &lt;lol :x="fooVal" :y="barVal" v-model="lolVal"&gt;&lt;/lol&gt;
     &lt;lol :x="fooVal" :y="barVal" :z="lolVal" @input="lolVal = $event"&gt;&lt;/lol&gt;
 &lt;/div&gt;</code></pre>
-<h4>
-<strong>Vue.js 2</strong> (<a href="https://codepen.io/gander/pen/eYYVgKJ"><em>test</em></a>)</h4>
-<pre><code class="language-javascript">Vue.component("foo", {
+                <h4>
+                    <strong>Vue.js 2</strong> (<a href="https://codepen.io/gander/pen/eYYVgKJ"><em>test</em></a>)</h4>
+                <pre><code class="language-javascript">Vue.component("foo", {
   template: `&lt;button @click="increment"&gt;{{ value }}&lt;/button&gt;`,
   props: {
     value: Number
@@ -125,9 +125,9 @@ new Vue({
     lolVal: 0
   }
 });</code></pre>
-<h4>
-<strong>Vue.js 3 / Composition API</strong> (<a href="https://codepen.io/gander/pen/oNNEPBy"><em>test</em></a>)</h4>
-<pre><code class="language-javascript">// vueCompositionApi =&gt; Vue.js 2.x plugin
+                <h4>
+                    <strong>Vue.js 3 / Composition API</strong> (<a href="https://codepen.io/gander/pen/oNNEPBy"><em>test</em></a>)</h4>
+                <pre><code class="language-javascript">// vueCompositionApi =&gt; Vue.js 2.x plugin
 
 Vue.use(vueCompositionApi.default);
 
@@ -178,35 +178,35 @@ new Vue({
     lolVal: 0
   }
 });</code></pre>
-<p>Sources:</p>
-<ul>
-<li><a href="https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component">https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component</a></li>
-<li><a href="https://vuejs.org/v2/api/#model">https://vuejs.org/v2/api/#model</a></li>
-<li>
-<p><a href="https://medium.com/js-dojo/7-ways-to-define-a-component-template-in-vuejs-c04e0c72900d">https://medium.com/js-dojo/7-ways-to-define-a-component-template-in-vuejs-c04e0c72900d</a></p>
-</li>
-<li>
-<a href="https://vuejs.org/v2/api/#v-model">https://vuejs.org/v2/api/#v-model</a>
-<ul>
-<li><a href="https://vuejs.org/v2/api/#v-bind">https://vuejs.org/v2/api/#v-bind</a></li>
-<li><a href="https://vuejs.org/v2/api/#v-on">https://vuejs.org/v2/api/#v-on</a></li>
-</ul>
-</li>
-</ul>
-<h3>Init with data from <strong>dataset</strong>
-</h3>
-<pre><code class="language-javascript">export default {
+                <p>Sources:</p>
+                <ul>
+                    <li><a href="https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component">https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component</a></li>
+                    <li><a href="https://vuejs.org/v2/api/#model">https://vuejs.org/v2/api/#model</a></li>
+                    <li>
+                        <p><a href="https://medium.com/js-dojo/7-ways-to-define-a-component-template-in-vuejs-c04e0c72900d">https://medium.com/js-dojo/7-ways-to-define-a-component-template-in-vuejs-c04e0c72900d</a></p>
+                    </li>
+                    <li>
+                        <a href="https://vuejs.org/v2/api/#v-model">https://vuejs.org/v2/api/#v-model</a>
+                        <ul>
+                            <li><a href="https://vuejs.org/v2/api/#v-bind">https://vuejs.org/v2/api/#v-bind</a></li>
+                            <li><a href="https://vuejs.org/v2/api/#v-on">https://vuejs.org/v2/api/#v-on</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Init with data from <strong>dataset</strong>
+                </h3>
+                <pre><code class="language-javascript">export default {
     data() {
         return {
             id: this['$root']['$el']['dataset']['id'],
         };
     },
 };</code></pre>
-<p><strong>Version 2</strong>:</p>
-<p><em>index.html</em>:</p>
-<pre><code class="language-html">    &lt;div id="app" data-id="123"&gt;&lt;/div&gt;</code></pre>
-<p><em>index.js</em>:</p>
-<pre><code class="language-js">    (function (el) {
+                <p><strong>Version 2</strong>:</p>
+                <p><em>index.html</em>:</p>
+                <pre><code class="language-html">    &lt;div id="app" data-id="123"&gt;&lt;/div&gt;</code></pre>
+                <p><em>index.js</em>:</p>
+                <pre><code class="language-js">    (function (el) {
 
         new Vue({
             el,
@@ -215,8 +215,8 @@ new Vue({
         });
 
     })(document.getElementById('app'));</code></pre>
-<p><em>Module.vue</em>:</p>
-<pre><code class="language-js">    export default {
+                <p><em>Module.vue</em>:</p>
+                <pre><code class="language-js">    export default {
         name: 'Module',
         data() {
             return {
@@ -224,8 +224,8 @@ new Vue({
             };
         },
     };</code></pre>
-<p><strong>Version 3</strong>:</p>
-<pre><code class="language-js">    (function (el) {
+                <p><strong>Version 3</strong>:</p>
+                <pre><code class="language-js">    (function (el) {
 
         new Vue({
             el: el,
@@ -236,11 +236,11 @@ new Vue({
         });
 
     })(document.getElementById('app'));</code></pre>
-<p><strong>Version 4</strong>:</p>
-<pre><code class="language-js">(function (el) {
+                <p><strong>Version 4</strong>:</p>
+                <pre><code class="language-js">(function (el) {
     new Vue({el, render: h =&gt; h(Module, {props: {...el.dataset}})});
 })(document.getElementById('app'));</code></pre>
-<pre><code class="language-js">// Module.vue
+                <pre><code class="language-js">// Module.vue
 export default {
   props: {
     id: {
@@ -250,10 +250,10 @@ export default {
     },
   },
 };</code></pre>
-<p><strong>Version 5</strong> (Vue 3.x) [<a href="https://jsfiddle.net/gander/ar2vdb6u">example</a>]:</p>
-<pre><code class="language-html">&lt;div id="foo"&gt;EXAMPLE #1&lt;/div&gt;
+                <p><strong>Version 5</strong> (Vue 3.x) [<a href="https://jsfiddle.net/gander/ar2vdb6u">example</a>]:</p>
+                <pre><code class="language-html">&lt;div id="foo"&gt;EXAMPLE #1&lt;/div&gt;
 &lt;div id="bar" data-firstname="Evan" data-lastname="You"&gt;EXAMPLE #2&lt;/div&gt;</code></pre>
-<pre><code class="language-js">function initApp(root) {
+                <pre><code class="language-js">function initApp(root) {
   Vue.createApp({
     props: {
       firstname: {
@@ -271,45 +271,44 @@ export default {
 
 initApp(document.getElementById('foo'));
 initApp(document.getElementById('bar'));</code></pre>
-<p>Result:</p>
-<pre><code class="language-html">&lt;div id="foo"&gt;John Doe&lt;/div&gt;
-&lt;div id="bar" data-firstname="Evan" data-lastname="You"&gt;Evan You&lt;/div&gt;</code></pre></article>
-                </div>
-                                                                </div>
+                <p>Result:</p>
+                <pre><code class="language-html">&lt;div id="foo"&gt;John Doe&lt;/div&gt;
+&lt;div id="bar" data-firstname="Evan" data-lastname="You"&gt;Evan You&lt;/div&gt;</code></pre>
+            </article>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-12" style="margin-top:20px; margin-bottom: 20px;">
-                        </div>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-                                </div>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
-                                        <a class="float-left btn btn-primary" href="ssh-config.html">&laquo; ~/.ssh/config</a>
-                    </div>
+            <a class="float-left btn btn-primary" href="ssh-config.html">&laquo; ~/.ssh/config</a>
+        </div>
         <div class="col-md-6">
-                                        <a class="float-right btn btn-primary" href="ansible-cheatsheet.html">Ansible cheatsheet &raquo;</a>
-                    </div>
+            <a class="float-right btn btn-primary" href="ansible-cheatsheet.html">Ansible cheatsheet &raquo;</a>
+        </div>
     </div>
 
 </div>
 
 
-<script async defer data-website-id="ba6e3a22-e496-4096-bd0a-23d48dfce33a" src="https://mws02-40122.wykr.es/umami.js"></script>
+<script async data-website-id="ba6e3a22-e496-4096-bd0a-23d48dfce33a" defer src="https://mws02-40122.wykr.es/umami.js"></script>
 
 
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script crossorigin="anonymous" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>

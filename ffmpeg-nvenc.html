@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css" rel="stylesheet">
     <title>
-                FFmpeg with NVIDIA Acceleration |         Gander Site
-            </title>
-    	<meta name="generator" content="Bolt">
-    	<link rel="canonical" href="ffmpeg-nvenc.html">
-    </head>
+        FFmpeg with NVIDIA Acceleration | Gander Site
+    </title>
+    <meta content="Bolt" name="generator">
+    <link href="ffmpeg-nvenc.html" rel="canonical">
+</head>
 <body>
 
 <div class="container">
@@ -20,89 +20,88 @@
         </div>
 
 
-                                                                                                                                                                                                                        <div class="col-md-12">
-                    <article><h3>Using NVIDIA hardware acceleration in FFmpeg/libav requires the following steps</h3>
-<ul>
-<li>Download and install the compatible driver from NVIDIA <a href="https://www.nvidia.com/drivers">web site</a>
-</li>
-<li>Download and install <code>ffnvcodec</code>:
-<pre><code>git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
+        <div class="col-md-12">
+            <article><h3>Using NVIDIA hardware acceleration in FFmpeg/libav requires the following steps</h3>
+                <ul>
+                    <li>Download and install the compatible driver from NVIDIA <a href="https://www.nvidia.com/drivers">web site</a>
+                    </li>
+                    <li>Download and install <code>ffnvcodec</code>:
+                        <pre><code>git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 cd nv-codec-headers &amp;&amp; sudo make install &amp;&amp; cd -</code></pre>
-</li>
-<li>
-<p>Download and install the CUDA Toolkit <a href="https://developer.nvidia.com/cuda-toolkit">CUDA toolkit</a></p>
-<p>For <strong>Linux Mint 19.3</strong>:</p>
-<pre><code>wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+                    </li>
+                    <li>
+                        <p>Download and install the CUDA Toolkit <a href="https://developer.nvidia.com/cuda-toolkit">CUDA toolkit</a></p>
+                        <p>For <strong>Linux Mint 19.3</strong>:</p>
+                        <pre><code>wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
 sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
 sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /"
 sudo apt-get update
 sudo apt-get -y install cuda</code></pre>
-</li>
-<li>Ensure that your PATH includes the bin directory where you installed the Toolkit
-<pre><code>export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}</code></pre>
-</li>
-<li>Install <code>sudo apt install nasm yasm</code>
-</li>
-<li>Download the latest <a href="https://www.ffmpeg.org/">FFmpeg</a> or <a href="https://www.libav.org/">libav</a> source code, by cloning the corresponding GIT repositories
-<ul>
-<li>FFmpeg: <a href="https://git.ffmpeg.org/ffmpeg.git">https://git.ffmpeg.org/ffmpeg.git</a>
-</li>
-<li>Libav: <a href="https://github.com/libav/libav">https://github.com/libav/libav</a>
-</li>
-</ul>
-</li>
-<li>Use the following configure command (Use correct CUDA library path in config command below)
-<pre><code>./configure --enable-cuda-nvcc --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64</code></pre>
-</li>
-<li>Use the following command to compile:
-<pre><code>make -j $(nproc)</code></pre>
-</li>
-<li>Install
-<pre><code>sudo make install</code></pre>
-</li>
-</ul>
-<h3>Sources:</h3>
-<ul>
-<li><a href="https://developer.nvidia.com/ffmpeg">https://developer.nvidia.com/ffmpeg</a></li>
-<li><a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/">https://docs.nvidia.com/cuda/cuda-installation-guide-linux/</a></li>
-</ul></article>
-                </div>
-                                                                </div>
+                    </li>
+                    <li>Ensure that your PATH includes the bin directory where you installed the Toolkit
+                        <pre><code>export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}</code></pre>
+                    </li>
+                    <li>Install <code>sudo apt install nasm yasm</code>
+                    </li>
+                    <li>Download the latest <a href="https://www.ffmpeg.org/">FFmpeg</a> or <a href="https://www.libav.org/">libav</a> source code, by cloning the corresponding GIT repositories
+                        <ul>
+                            <li>FFmpeg: <a href="https://git.ffmpeg.org/ffmpeg.git">https://git.ffmpeg.org/ffmpeg.git</a>
+                            </li>
+                            <li>Libav: <a href="https://github.com/libav/libav">https://github.com/libav/libav</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Use the following configure command (Use correct CUDA library path in config command below)
+                        <pre><code>./configure --enable-cuda-nvcc --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64</code></pre>
+                    </li>
+                    <li>Use the following command to compile:
+                        <pre><code>make -j $(nproc)</code></pre>
+                    </li>
+                    <li>Install
+                        <pre><code>sudo make install</code></pre>
+                    </li>
+                </ul>
+                <h3>Sources:</h3>
+                <ul>
+                    <li><a href="https://developer.nvidia.com/ffmpeg">https://developer.nvidia.com/ffmpeg</a></li>
+                    <li><a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/">https://docs.nvidia.com/cuda/cuda-installation-guide-linux/</a></li>
+                </ul>
+            </article>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-12" style="margin-top:20px; margin-bottom: 20px;">
-                        </div>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-                                </div>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
-                                        <a class="float-left btn btn-primary" href="node-npm.html">&laquo; Node.js and NPM+NPX</a>
-                    </div>
+            <a class="float-left btn btn-primary" href="node-npm.html">&laquo; Node.js and NPM+NPX</a>
+        </div>
         <div class="col-md-6">
-                                        <a class="float-right btn btn-primary" href="graylog-memory-heap-usage.html">Graylog Memory/Heap usage &raquo;</a>
-                    </div>
+            <a class="float-right btn btn-primary" href="graylog-memory-heap-usage.html">Graylog Memory/Heap usage &raquo;</a>
+        </div>
     </div>
 
 </div>
 
 
-<script async defer data-website-id="ba6e3a22-e496-4096-bd0a-23d48dfce33a" src="https://mws02-40122.wykr.es/umami.js"></script>
+<script async data-website-id="ba6e3a22-e496-4096-bd0a-23d48dfce33a" defer src="https://mws02-40122.wykr.es/umami.js"></script>
 
 
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script crossorigin="anonymous" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>

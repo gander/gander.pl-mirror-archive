@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css" rel="stylesheet">
     <title>
-                PhpStorm tips and tricks |         Gander Site
-            </title>
-    	<meta name="generator" content="Bolt">
-    	<link rel="canonical" href="phpstorm-tips-and-tricks.html">
-    </head>
+        PhpStorm tips and tricks | Gander Site
+    </title>
+    <meta content="Bolt" name="generator">
+    <link href="phpstorm-tips-and-tricks.html" rel="canonical">
+</head>
 <body>
 
 <div class="container">
@@ -20,177 +20,176 @@
         </div>
 
 
-                                                                                                                                                                                                                        <div class="col-md-12">
-                    <article><h3>Pimple File Dumper - Helper Provider for Silex Idea Plugin</h3>
-<p><strong>PhpStorm</strong>: <em>Settings » Plugins » Browse repositories...  » Silex/Pimple plugin</em><br>
-<strong>Composer</strong>: <a href="https://packagist.org/packages/sorien/silex-pimple-dumper">https://packagist.org/packages/sorien/silex-pimple-dumper</a><br>
-<strong>Composer</strong>: <a href="https://packagist.org/packages/jbzoo/pimpledumper">https://packagist.org/packages/jbzoo/pimpledumper</a><br></p>
-<h3>Docker Remote Interpreters</h3>
-<p><strong>JetBrains Blog</strong>: <a href="https://blog.jetbrains.com/phpstorm/2016/11/docker-remote-interpreters/"> Docker Remote Interpreters</a><br>
-PhpStorm:
-<em><strong>Settings</strong> » Languages &amp; Frameworks » PHP</em> </p>
-<ul>
-<li>
-<strong>CLI Interpreter</strong> » <strong>[...]</strong>
-<ul>
-<li><em><strong>CLI Interpreters</strong> » <strong>[+]</strong> → Remote...</em></li>
-<li>
-<em><strong>Configure PHP Remote Interpreter</strong> → Docker → <strong>[New...]</strong></em>
-<ul>
-<li><em><strong>Docker2</strong> » API URL: <code>unix:///var/run/docker.sock</code></em></li>
-</ul>
-</li>
-<li>
-<em><strong>Image name</strong></em>: <code>gander/dev:7.1</code>
-</li>
-<li>
-<em><strong>PHP excecutable</strong></em>: <code>php</code>
-</li>
-</ul>
-</li>
-<li><em><strong>Path mappings</strong>: <code>PhpStormProjects/project.dev</code> : <code>/www/project.dev</code></em></li>
-<li>
-<em><strong>Docker container</strong> » <strong>[...]</strong></em>
-<ul>
-<li>Network mode: <code>lamp_default</code> <em>(default: bridge)</em>
-</li>
-<li>Links: <code>lamp_pgsql_1</code> : <code>pgsql</code>
-</li>
-<li>Volume bindings: <code>/www/project.dev</code> : <code>PhpStormProjects/project.dev</code>
-</li>
-</ul>
-</li>
-</ul>
-<h4>Info:</h4>
-<ul>
-<li><a href="https://blog.jetbrains.com/phpstorm/2016/11/docker-remote-interpreters/">Docker Remote Interpreters</a></li>
-<li><a href="https://confluence.jetbrains.com/display/PhpStorm/Debugging+PHP+CLI+scripts+with+PhpStorm">Debugging PHP CLI scripts with PhpStorm</a></li>
-</ul>
-<h3>Favourite settings</h3>
-<ul>
-<li>
-<em>File | Settings | Editor | General | Code Folding</em><br>
-<ul>
-<li>General
-<ul>
-<li><span class="text-danger">File header</span></li>
-</ul>
-</li>
-<li>PHP
-<ul>
-<li><span class="text-danger">Imports</span></li>
-</ul>
-</li>
-<li>XML
-<ul>
-<li><span class="text-danger">HTML 'style' attribute</span></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<em>File | Settings | Version Control | Confirmation</em><br>
-<ul>
-<li><span class="text-danger">Restore workspace on branch switching</span></li>
-</ul>
-</li>
-</ul>
-<h3>File Types</h3>
-<p><strong>PhpStorm</strong>: <em>Settings</em> » <em>Editor</em> » <em>File Types</em>:</p>
-<table class="table table-bordered" style="width:auto">
-<thead>
-    <tr>
-        <th>Recognized File Types</th>
-        <th>Registered patterns</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td>Docker</td>
-        <td><em>Dockerfile.*</em></td>
-    </tr>
-    <tr>
-        <td>JSON</td>
-        <td>
-<em>*.json.dist</em><br>
-        <em>composer.lock</em><br>
-        <em>composer.lock.dist</em>
-        </td>
-    </tr>
-    <tr>
-        <td>YAML</td>
-        <td>
-<em>*.yml.dist</em><br><em>*.yaml.dist</em>
-</td>
-    </tr>
-    <tr>
-        <td>Ignore</td>
-        <td>
-            <em>.git-ftp-ignore</em><br>
-            <em>.git-ftp-include</em>
-        </td>
-    </tr>
+        <div class="col-md-12">
+            <article><h3>Pimple File Dumper - Helper Provider for Silex Idea Plugin</h3>
+                <p><strong>PhpStorm</strong>: <em>Settings » Plugins » Browse repositories... » Silex/Pimple plugin</em><br>
+                    <strong>Composer</strong>: <a href="https://packagist.org/packages/sorien/silex-pimple-dumper">https://packagist.org/packages/sorien/silex-pimple-dumper</a><br>
+                    <strong>Composer</strong>: <a href="https://packagist.org/packages/jbzoo/pimpledumper">https://packagist.org/packages/jbzoo/pimpledumper</a><br></p>
+                <h3>Docker Remote Interpreters</h3>
+                <p><strong>JetBrains Blog</strong>: <a href="https://blog.jetbrains.com/phpstorm/2016/11/docker-remote-interpreters/"> Docker Remote Interpreters</a><br>
+                    PhpStorm:
+                    <em><strong>Settings</strong> » Languages &amp; Frameworks » PHP</em></p>
+                <ul>
+                    <li>
+                        <strong>CLI Interpreter</strong> » <strong>[...]</strong>
+                        <ul>
+                            <li><em><strong>CLI Interpreters</strong> » <strong>[+]</strong> → Remote...</em></li>
+                            <li>
+                                <em><strong>Configure PHP Remote Interpreter</strong> → Docker → <strong>[New...]</strong></em>
+                                <ul>
+                                    <li><em><strong>Docker2</strong> » API URL: <code>unix:///var/run/docker.sock</code></em></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <em><strong>Image name</strong></em>: <code>gander/dev:7.1</code>
+                            </li>
+                            <li>
+                                <em><strong>PHP excecutable</strong></em>: <code>php</code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><em><strong>Path mappings</strong>: <code>PhpStormProjects/project.dev</code> : <code>/www/project.dev</code></em></li>
+                    <li>
+                        <em><strong>Docker container</strong> » <strong>[...]</strong></em>
+                        <ul>
+                            <li>Network mode: <code>lamp_default</code> <em>(default: bridge)</em>
+                            </li>
+                            <li>Links: <code>lamp_pgsql_1</code> : <code>pgsql</code>
+                            </li>
+                            <li>Volume bindings: <code>/www/project.dev</code> : <code>PhpStormProjects/project.dev</code>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>Info:</h4>
+                <ul>
+                    <li><a href="https://blog.jetbrains.com/phpstorm/2016/11/docker-remote-interpreters/">Docker Remote Interpreters</a></li>
+                    <li><a href="https://confluence.jetbrains.com/display/PhpStorm/Debugging+PHP+CLI+scripts+with+PhpStorm">Debugging PHP CLI scripts with PhpStorm</a></li>
+                </ul>
+                <h3>Favourite settings</h3>
+                <ul>
+                    <li>
+                        <em>File | Settings | Editor | General | Code Folding</em><br>
+                        <ul>
+                            <li>General
+                                <ul>
+                                    <li><span class="text-danger">File header</span></li>
+                                </ul>
+                            </li>
+                            <li>PHP
+                                <ul>
+                                    <li><span class="text-danger">Imports</span></li>
+                                </ul>
+                            </li>
+                            <li>XML
+                                <ul>
+                                    <li><span class="text-danger">HTML 'style' attribute</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <em>File | Settings | Version Control | Confirmation</em><br>
+                        <ul>
+                            <li><span class="text-danger">Restore workspace on branch switching</span></li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>File Types</h3>
+                <p><strong>PhpStorm</strong>: <em>Settings</em> » <em>Editor</em> » <em>File Types</em>:</p>
+                <table class="table table-bordered" style="width:auto">
+                    <thead>
+                    <tr>
+                        <th>Recognized File Types</th>
+                        <th>Registered patterns</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Docker</td>
+                        <td><em>Dockerfile.*</em></td>
+                    </tr>
+                    <tr>
+                        <td>JSON</td>
+                        <td>
+                            <em>*.json.dist</em><br>
+                            <em>composer.lock</em><br>
+                            <em>composer.lock.dist</em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>YAML</td>
+                        <td>
+                            <em>*.yml.dist</em><br><em>*.yaml.dist</em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ignore</td>
+                        <td>
+                            <em>.git-ftp-ignore</em><br>
+                            <em>.git-ftp-include</em>
+                        </td>
+                    </tr>
 
-</tbody>
-</table>
-<pre><code>/**\n * @var $2\n*/\npublic \$$1;</code></pre>
-<h3>PhpStorm Dictionary</h3>
-<ul>
-<li>Source: <a href="https://tomaszkane.net/2014/09/polski-slownik-do-phpstorm/">Polski słownik do PhpStorm</a>
-</li>
-<li>File: <a href="files/polish.dic.zip">polish.dic.zip</a>
-</li>
-</ul>
-<h3>Favourite plugins</h3>
-<ul>
-<li>PHP Toolbox</li>
-<li>PHP Annotations</li>
-<li>Symfony Plugin</li>
-<li>Silex/Pimple Plugin</li>
-<li>PHP composer.json support</li>
-<li>.ignore</li>
-<li>BashSupport</li>
-<li>String Manipulation</li>
-</ul></article>
-                </div>
-                                                                </div>
+                    </tbody>
+                </table>
+                <pre><code>/**\n * @var $2\n*/\npublic \$$1;</code></pre>
+                <h3>PhpStorm Dictionary</h3>
+                <ul>
+                    <li>Source: <a href="https://tomaszkane.net/2014/09/polski-slownik-do-phpstorm/">Polski słownik do PhpStorm</a>
+                    </li>
+                    <li>File: <a href="files/polish.dic.zip">polish.dic.zip</a>
+                    </li>
+                </ul>
+                <h3>Favourite plugins</h3>
+                <ul>
+                    <li>PHP Toolbox</li>
+                    <li>PHP Annotations</li>
+                    <li>Symfony Plugin</li>
+                    <li>Silex/Pimple Plugin</li>
+                    <li>PHP composer.json support</li>
+                    <li>.ignore</li>
+                    <li>BashSupport</li>
+                    <li>String Manipulation</li>
+                </ul>
+            </article>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-12" style="margin-top:20px; margin-bottom: 20px;">
-                        <em>
-                    Tags:
-                </em>
-                    <a href="tags/cheatsheet.html">cheatsheet</a>,                     <a href="tags/tips.html">tips</a>,                     <a href="tags/tricks.html">tricks</a>,                     <a href="tags/phpstorm.html">phpstorm</a>                            </div>
+            <em>
+                Tags:
+            </em>
+            <a href="tags/cheatsheet.html">cheatsheet</a>, <a href="tags/tips.html">tips</a>, <a href="tags/tricks.html">tricks</a>, <a href="tags/phpstorm.html">phpstorm</a></div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-                                </div>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
-                                        <a class="float-left btn btn-primary" href="javascript-fixtures.html">&laquo; JavaScript fixtures</a>
-                    </div>
+            <a class="float-left btn btn-primary" href="javascript-fixtures.html">&laquo; JavaScript fixtures</a>
+        </div>
         <div class="col-md-6">
-                                        <a class="float-right btn btn-primary" href="favourite-code.html">Favourite code &raquo;</a>
-                    </div>
+            <a class="float-right btn btn-primary" href="favourite-code.html">Favourite code &raquo;</a>
+        </div>
     </div>
 
 </div>
 
 
-<script async defer data-website-id="ba6e3a22-e496-4096-bd0a-23d48dfce33a" src="https://mws02-40122.wykr.es/umami.js"></script>
+<script async data-website-id="ba6e3a22-e496-4096-bd0a-23d48dfce33a" defer src="https://mws02-40122.wykr.es/umami.js"></script>
 
 
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script crossorigin="anonymous" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
